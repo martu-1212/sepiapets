@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Sepia Pets</string>
     <string name="dummy_title">Pet1</string>
+    <string name="title_time_out">Time Out</string>
+    <string name="time_out_msg">You can only access it</string>
+    <string name="pets_list">Pets List</string>
 </resources>

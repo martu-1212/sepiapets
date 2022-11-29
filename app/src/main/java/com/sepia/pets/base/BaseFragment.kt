@@ -17,7 +17,7 @@ abstract class BaseFragment<B : ViewBinding> : Fragment() {
     @get:LayoutRes
     abstract val layoutId: Int
     abstract val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> B
-    private lateinit var navController: NavController
+    lateinit var navController: NavController
 
     lateinit var binding: B
 

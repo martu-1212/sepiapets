@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/margin_250"
+    android:layout_height="wrap_content"
+    android:background="@drawable/round_rect_dialog_bg"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="@dimen/margin_11"
+        android:paddingBottom="@dimen/margin_2"
+        android:text="@string/title_time_out"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_16"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/txt_message"
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="@dimen/margin_2"
+        android:paddingBottom="@dimen/margin_11"
+        android:text="@string/time_out_msg"
+        android:textSize="@dimen/font_14"
+        app:layout_constraintEnd_toEndOf="@+id/txt_title"
+        app:layout_constraintStart_toStartOf="@+id/txt_title"
+        app:layout_constraintTop_toBottomOf="@+id/txt_title" />
+
+    <View
+        android:id="@+id/viewLine"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/margin_1"
+        android:layout_marginTop="@dimen/margin_11"
+        android:background="@color/grey_light"
+        app:layout_constraintEnd_toEndOf="@+id/txt_message"
+        app:layout_constraintStart_toStartOf="@+id/txt_message"
+        app:layout_constraintTop_toBottomOf="@+id/txt_message" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvOk"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingVertical="@dimen/margin_11"
+        android:text="Ok"
+        android:textSize="@dimen/font_16"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/viewLine"
+        app:layout_constraintTop_toBottomOf="@+id/viewLine" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

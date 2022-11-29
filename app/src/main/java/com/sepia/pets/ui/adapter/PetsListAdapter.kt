@@ -1,22 +1,19 @@
 package com.sepia.pets.ui.adapter
 
 import android.content.Context
-import android.text.TextUtils
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.sepia.pets.R
-import com.sepia.pets.`interface`.OnItemClickListener
+import com.sepia.pets.interfac.OnPetsItemClickListener
 import com.sepia.pets.databinding.ItemPetsBinding
-import com.sepia.pets.model.Pets
-
+import com.sepia.pets.model.Pet
 class PetsListAdapter(
     private val mContext: Context,
-    private val mPetsList: ArrayList<Pets>,
-    private val mClickListener: OnItemClickListener,
+    private val mPetsList: ArrayList<Pet>,
+    private val mClickListener: OnPetsItemClickListener,
     ) : RecyclerView.Adapter<PetsListAdapter.ViewHolder>() {
 
     class ViewHolder(val binding: ItemPetsBinding) : RecyclerView.ViewHolder(binding.root)
@@ -39,12 +36,15 @@ class PetsListAdapter(
             .error(R.drawable.pet_placeimage)
 
         Glide.with(mContext)
-            .load(mPetsList.get(position).image_url)
+            .load(mPetsList.get(position).imageUrl)
             .apply(options)
             .into(holder.binding.ivPet)
 
         holder.binding.tvTitle.text = mPetsList[position].title
 
+        holder.itemView.setOnClickListener {
+            mClickListener.onItemViewClick(holder.itemView,position)
+        }
     }
 
 }

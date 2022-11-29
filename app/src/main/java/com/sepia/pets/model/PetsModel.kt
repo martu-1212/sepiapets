@@ -1,12 +1,30 @@
 package com.sepia.pets.model
 
-data class PetsModel(
-    var `data`: ArrayList<Pets>,
-)
+import com.google.gson.annotations.Expose
 
-data class Pets(
-    val image_url: String?,
-    val title: String?,
-    val content_url: String?,
-    val date_added: String?
-)
+import com.google.gson.annotations.SerializedName
+
+
+class PetsModel {
+    @SerializedName("pets")
+    @Expose
+    var pets: ArrayList<Pet>? = null
+}
+
+class Pet {
+    @SerializedName("image_url")
+    @Expose
+    var imageUrl: String? = null
+
+    @SerializedName("title")
+    @Expose
+    var title: String? = null
+
+    @SerializedName("content_url")
+    @Expose
+    var contentUrl: String? = null
+
+    @SerializedName("date_added")
+    @Expose
+    var dateAdded: String? = null
+}
